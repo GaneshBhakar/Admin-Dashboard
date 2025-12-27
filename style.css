@@ -94,7 +94,6 @@ button{
 .content{
 	background-color: #e5e7eb;
 	display: grid;
-	grid-template-rows: auto 1fr;
 	grid-template-columns: 3fr 1fr;
 }
 
@@ -110,17 +109,39 @@ button{
 
 .projects > h3 {
   grid-column: 1 / -1;
+  margin: 0 0 12px 0;
 }
 
 
 .cards{
 	background-color: white;
-	padding: 20px;
+	padding: 16px 20px 12px 24px;
 	border-radius: 10px;
 
 	display: flex;
 	flex-direction: column;
 	gap: 12px;
+
+	position: relative;
+	padding-left: 24px;
+}
+
+.cards::before{
+	content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background-color: #facc15; 
+  border-radius: 10px 0 0 10px;
+}
+
+.cards-content p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #4b5563;
+  margin: 6px 0 0 0;
 }
 
 .icons{
@@ -128,6 +149,12 @@ button{
 	justify-content: flex-end;
 	gap: 16px;
 	margin-top: auto;
+}
+
+.icons img {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
 }
 
 .wrapper{
@@ -155,5 +182,15 @@ ul{
 
 .trending-item{
 	display: flex;
-	margin: 10px;
+	gap: 10px;
+}
+
+.trending-item img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.article + .article {
+  border-top: 1px solid #e5e7eb;
 }
